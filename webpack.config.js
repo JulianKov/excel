@@ -43,6 +43,12 @@ module.exports = {
   devServer: {
     port: 3000,
     hot: isDev,
+    contentBase: path.resolve(__dirname, 'src'),
+    inline: true,
+    watchOptions: {
+      poll: true,
+      ignored: '/node_modules/',
+    },
   },
   plugins: [
     new CleanWebpackPlugin(),
